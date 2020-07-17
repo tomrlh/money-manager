@@ -1,9 +1,14 @@
 import React from 'react';
 import {Button, View, TextInput, StyleSheet} from 'react-native';
+import {NavigationStackProp} from 'react-navigation-stack';
 
 import BalanceLabel from '../../components/BalanceLabel';
 
-const NewEntry = () => {
+type Props = {
+  navigation: NavigationStackProp;
+};
+
+const NewEntry = ({navigation}: Props) => {
   return (
     <View style={styles.container}>
       <BalanceLabel />
@@ -17,7 +22,7 @@ const NewEntry = () => {
 
       <View>
         <Button title="Add" />
-        <Button title="Cancel" />
+        <Button title="Cancel" onPress={() => navigation.goBack()} />
       </View>
     </View>
   );
