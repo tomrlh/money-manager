@@ -1,11 +1,15 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
-const BalanceLabel = () => {
+type Props = {
+  currentBalance: string;
+};
+
+const BalanceLabel = ({currentBalance}: Props) => {
   return (
     <View style={styles.container}>
       <Text style={styles.label}>Actual Balance</Text>
-      <Text style={styles.value}>$2.064,35</Text>
+      <Text style={styles.value}>{currentBalance}</Text>
     </View>
   );
 };

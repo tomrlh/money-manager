@@ -1,17 +1,18 @@
 import React from 'react';
 import {Button, View, TextInput, StyleSheet} from 'react-native';
 import {NavigationStackProp} from 'react-navigation-stack';
-
-import BalanceLabel from '../../components/BalanceLabel';
+import BalanceLabel from '../../components/BalanceLabel/BalanceLabel';
 
 type Props = {
   navigation: NavigationStackProp;
 };
 
 const NewEntry = ({navigation}: Props) => {
+  const balance = '$19.300,25';
+
   return (
     <View style={styles.container}>
-      <BalanceLabel />
+      <BalanceLabel currentBalance={balance} />
 
       <View>
         <TextInput style={styles.input} />
