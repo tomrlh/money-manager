@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Button, View, StyleSheet} from 'react-native';
 import BalancePanel from '../../components/BalancePanel/BalancePanel';
 import EntrySummary from '../../components/EntrySummary/EntrySummary';

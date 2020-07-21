@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {View, Text, FlatList, StyleSheet} from 'react-native';
+import {getEntries} from '../../services/Entries';
 
 interface Entry {
   key: string;
@@ -11,7 +12,17 @@ type Props = {
   entries: Array<Entry>;
 };
 
-const EntryList = ({entries}: Props) => {
+const EntryList = () => {
+  [entries, setEntries] = useState([]);
+
+  useEffect(() => {
+    async function loadEntries() {
+      const data = await getEntries();
+      setEntries(data);
+    }
+    loadEntries();
+  }, []);
+
   return (
     <View>
       <Text style={styles.title}>Last Entries</Text>
