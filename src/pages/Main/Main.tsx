@@ -4,6 +4,7 @@ import BalancePanel from '../../components/BalancePanel/BalancePanel';
 import EntrySummary from '../../components/EntrySummary/EntrySummary';
 import EntryList from '../../components/EntryList/EntryListItem';
 import {NavigationStackProp} from 'react-navigation-stack';
+import {saveEntry} from '../../services/Entries';
 
 type Props = {
   navigation: NavigationStackProp;
@@ -11,6 +12,10 @@ type Props = {
 
 const Main = ({navigation}: Props) => {
   const balance = '$19.300,25';
+
+  const save = () => {
+    saveEntry();
+  };
 
   const entriesGrouped = [
     {key: '1', description: 'Food', amount: 200},
